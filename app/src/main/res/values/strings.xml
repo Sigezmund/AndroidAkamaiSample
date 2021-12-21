@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">KotlinSample</string>
+    <string name="sync_time">Sync time</string>
+</resources>

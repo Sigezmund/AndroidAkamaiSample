@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/arrow_button" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineTop"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="19dp" />
+
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="5dp"
+                android:layout_gravity="top"
+                android:background="#1d125d"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/homeTeamLogo"
+                android:layout_width="30dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="17dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/guidelineTop" />
+
+            <ImageView
+                android:id="@+id/awayTeamLogo"
+                android:layout_width="30dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="@+id/homeTeamLogo"
+                app:layout_constraintTop_toBottomOf="@id/homeTeamLogo" />
+
+            <TextView
+                android:id="@+id/homeTeamName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif"
+                android:maxLines="1"
+                android:textColor="#1d125d"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/homeTeamLogo"
+                app:layout_constraintEnd_toEndOf="@+id/hometeamScore"
+                app:layout_constraintStart_toEndOf="@+id/homeTeamLogo"
+                app:layout_constraintTop_toTopOf="@id/homeTeamLogo"
+                tools:text="Napoli akjsdhkajshdkjash askdjhaskjdh aksjdh" />
+
+            <TextView
+                android:id="@+id/awayTeamName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif"
+                android:maxLines="1"
+                android:textColor="#1d125d"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/awayTeamLogo"
+                app:layout_constraintEnd_toStartOf="@id/awayTeamScore"
+                app:layout_constraintStart_toEndOf="@+id/awayTeamLogo"
+                app:layout_constraintTop_toTopOf="@id/awayTeamLogo"
+                tools:text="Lazio dkjfhskjdhf sdkjfsdkjf" />
+
+            <ImageView
+                android:id="@+id/openNext"
+                android:layout_width="16dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="20dp"
+                android:background="#1d125d"
+                android:scaleType="centerInside"
+                android:src="@drawable/arrow_button"
+                app:layout_constraintBottom_toBottomOf="@+id/awayTeamLogo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/homeTeamLogo" />
+
+            <View
+                android:id="@+id/endDivider"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="16dp"
+                android:background="#d9d9d9"
+                app:layout_constraintBottom_toBottomOf="@+id/awayTeamLogo"
+                app:layout_constraintEnd_toStartOf="@id/openNext"
+                app:layout_constraintTop_toTopOf="@+id/homeTeamLogo" />
+
+            <FrameLayout
+                android:id="@+id/openStats"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="@id/awayTeamLogo"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="@+id/endDivider"
+                app:layout_constraintTop_toTopOf="@+id/homeTeamLogo">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:ellipsize="end"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_horizontal"
+                    android:maxLines="1"
+                    android:text="Stats sdsasdasd"
+                    android:textColor="#1d125d"
+                    android:textSize="8sp"
+                    android:textStyle="normal" />
+
+            </FrameLayout>
+
+            <View
+                android:id="@+id/middleDivider"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="16dp"
+                android:background="#d9d9d9"
+                app:layout_constraintBottom_toBottomOf="@+id/awayTeamLogo"
+                app:layout_constraintEnd_toStartOf="@id/openStats"
+                app:layout_constraintTop_toTopOf="@+id/homeTeamLogo" />
+
+            <TextView
+                android:id="@+id/hometeamScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="sans-serif"
+                android:textColor="#1d125d"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@+id/homeTeamName"
+                app:layout_constraintEnd_toStartOf="@+id/middleDivider"
+                tools:text="2" />
+
+            <TextView
+                android:id="@+id/awayTeamScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="sans-serif"
+                android:textColor="#1d125d"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@+id/awayTeamName"
+                app:layout_constraintEnd_toStartOf="@+id/middleDivider"
+                tools:text="2" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+</FrameLayout>
