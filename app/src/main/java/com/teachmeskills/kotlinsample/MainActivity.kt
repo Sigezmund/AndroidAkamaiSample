@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.teachmeskills.kotlinsample.customlivedata.CustomLiveDataActivity
 
 
 class MainActivity : AppCompatActivity() {
@@ -17,6 +18,10 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.openPresenter).setOnClickListener {
             startActivity(Intent(this, AkamaiPresenterActivity::class.java))
+        }
+
+        findViewById<Button>(R.id.openCustomLiveDataViewModel).setOnClickListener {
+            startActivity(Intent(this, CustomLiveDataActivity::class.java))
         }
     }
 

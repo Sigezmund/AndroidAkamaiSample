@@ -1,12 +1,11 @@
 package com.teachmeskills.kotlinsample
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.teachmeskills.kotlinsample.extensions.testFun
 
 class AkamaiViewModelActivity : AppCompatActivity() {
 
@@ -19,11 +18,9 @@ class AkamaiViewModelActivity : AppCompatActivity() {
         findViewById<Button>(R.id.syncTime).setOnClickListener {
             viewModel.syncTime()
         }
-        viewModel.time.observe(this) {
+        viewModel.time.observe(this, Observer {
             timeTextView.text = it
-        }
-
-        viewModel.testFun()
+        })
     }
 
 

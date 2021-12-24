@@ -5,8 +5,6 @@ import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.*
 import java.net.URL
 
-
-
 class AkamaiViewModel : ViewModel() {
 
     val time = MutableLiveData<String>()
